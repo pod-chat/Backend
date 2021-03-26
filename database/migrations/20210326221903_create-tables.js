@@ -2,10 +2,11 @@ exports.up = function (knex) {
   return knex.schema
     .createTable('users', (tbl) => {
       tbl.increments('user_id');
-      tbl.string('user_first_name');
-      tbl.string('user_last_name');
-      tbl.string('user_email');
-      tbl.string('user_username');
+      tbl.string('user_first_name').notNullable();
+      tbl.string('user_last_name').notNullable();
+      tbl.string('user_email').notNullable().unique();
+      tbl.string('user_username').notNullable().unique();
+      tbl.string('user_password').notNullable();
       tbl.datetime('user_created_on').notNullable().defaultTo(knex.fn.now());
     })
     .createTable('posts', (tbl) => {
@@ -26,7 +27,6 @@ exports.up = function (knex) {
         .inTable('users')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
-      tbl.integer('comment_id').unsigned();
     })
 
     .createTable('post_comments', (tbl) => {
@@ -36,8 +36,22 @@ exports.up = function (knex) {
       tbl.integer('comment_upvotes');
       tbl.integer('comment_downvotes');
       tbl.datetime('comment_created_on').notNullable().defaultTo(knex.fn.now());
-      tbl.integer('post_id').notNullable();
-      tbl.integer('user_id').notNullable();
+      tbl
+        .integer('post_id')
+        .notNullable()
+        .unsigned()
+        .references('post_id')
+        .inTable('posts')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      tbl
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .references('user_id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     });
 };
 
