@@ -8,10 +8,10 @@ exports.seed = function (knex) {
         {
           comment_lineage: '',
           comment_body: 'hellooooo',
-          comment_upvote: 15,
-          comment_downvote: 12,
-          user_id: 1,
+          comment_upvotes: 15,
+          comment_downvotes: 12,
           post_id: 1,
+          user_id: 1,
         },
       ]);
     });
