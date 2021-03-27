@@ -6,7 +6,7 @@ exports.up = function (knex) {
       tbl.string('user_email').notNullable().unique();
       tbl.string('user_handle').notNullable().unique();
       tbl.string('user_password').notNullable();
-      tbl.datetime('user_created_on').notNullable().defaultTo(knex.fn.now());
+      tbl.datetime('user_created_on').defaultTo(knex.fn.now());
     })
     .createTable('posts', (tbl) => {
       tbl.increments('post_id');
@@ -14,9 +14,9 @@ exports.up = function (knex) {
       tbl.string('post_body').notNullable();
       tbl.integer('post_upvotes');
       tbl.integer('post_downvotes');
-      tbl.integer('post_clip_start').notNullable();
-      tbl.integer('post_clip_end').notNullable();
-      tbl.datetime('post_created_on').notNullable().defaultTo(knex.fn.now());
+      tbl.string('post_clip_start').notNullable();
+      tbl.string('post_clip_end').notNullable();
+      tbl.datetime('post_created_on').defaultTo(knex.fn.now());
       tbl.string('podcast_episode_id').notNullable();
       tbl
         .integer('user_id')
@@ -34,7 +34,7 @@ exports.up = function (knex) {
       tbl.string('comment_body').notNullable();
       tbl.integer('comment_upvotes');
       tbl.integer('comment_downvotes');
-      tbl.datetime('comment_created_on').notNullable().defaultTo(knex.fn.now());
+      tbl.datetime('comment_created_on').defaultTo(knex.fn.now());
       tbl
         .integer('post_id')
         .notNullable()
