@@ -5,6 +5,7 @@ exports.up = function (knex) {
       tbl.string('user_display_name').notNullable();
       tbl.string('user_email').notNullable().unique();
       tbl.string('user_handle').notNullable().unique();
+      tbl.binary('user_image');
       tbl.string('user_password').notNullable();
       tbl.datetime('user_created_on').defaultTo(knex.fn.now());
     })
