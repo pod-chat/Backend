@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('../../config/jwtSecret');
+const { jwt_secret } = require('../../config/jwtSecret');
 const User = require('../users/users-model');
 
 const restricted = (req, res, next) => {
@@ -7,7 +7,7 @@ const restricted = (req, res, next) => {
   if (!token) {
     res.status(401).json({ message: 'Please log in' });
   } else {
-    jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    jwt.verify(token, jwt_secret, (err, decoded) => {
       if (err) {
         res
           .status(401)
