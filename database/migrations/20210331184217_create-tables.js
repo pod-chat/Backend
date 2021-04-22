@@ -52,11 +52,55 @@ exports.up = function (knex) {
         .inTable('users')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
-    });
+    })
+
+    .createTable('post_votes', (tbl) => {
+      tbl.increments('vote_id');
+      tbl.integer('vote').notNullable(); //1 = upvote, 2 = downvote
+      tbl
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .references('user_id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      tbl
+        .integer('post_id')
+        .notNullable()
+        .unsigned()
+        .references('post_id')
+        .inTable('posts')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+    })
+
+    .createTable('comment_votes', (tbl) => {
+      tbl.increments('vote_id');
+      tbl.integer('vote').notNullable(); //1 = upvote, 2 = downvote
+      tbl
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .references('user_id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      tbl
+        .integer('comment_id')
+        .notNullable()
+        .unsigned()
+        .references('comment_id')
+        .inTable('post_comments')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+    })
 };
 
 exports.down = function (knex) {
   return knex.schema
+    .dropTableIfExists('comment_votes')
+    .dropTableIfExists('post_votes')
     .dropTableIfExists('post_comments')
     .dropTableIfExists('posts')
     .dropTableIfExists('users');
