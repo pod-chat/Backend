@@ -1,5 +1,6 @@
-const Posts = require('./posts-model');
+const request = require("supertest");
 const db = require('../../database/dbConfig');
+const server = require('../server');
 
 const post1 = {
     post_title: 'Elon Musk',
@@ -36,22 +37,17 @@ afterAll(async () => {
     await db.destroy();
 })
 
-it("Correct ENV", () => {
-    expect(process.env.NODE_ENV).toBe("testing");
-})
-
-describe("Posts model", () => {
-    describe("AddPost function", () => {
-        test("Adds post to db", async () => {
-            let posts;
-            
-            await Posts.addPost(post1);
-            posts = await db("posts");
-            expect(posts).toHaveLength(1);
-
-            await Posts.addPost(post2);
-            posts = await db("posts");
-            expect(posts).toHaveLength(2);
+describe("Posts Router Tests", () => {
+    describe("[GET] /api/posts", () => {
+        test("Responds with status 200, ok", async () => {
+            const res = await request(server).get("/api/posts");
+            expect(res.status).toEqual(200);
+        })
+        test("Returns with correct number of posts", async () => {
+            let res;
+            await db("posts").insert(post1);
+            res = await request(server).get('/api/posts');
+            expect(res.body).toHaveLength(1);
         })
     })
 })

@@ -18,8 +18,11 @@ module.exports = {
     connection: process.env.DEV_DATABASE_URL,
   },
   testing: {
-    ...sharedConfig,
-    connection: process.env.TESTING_DATABASE_URL,
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    migrations: { directory: './database/migrations' },
+    seeds: { directory: './database/seeds' },
+    connection: {filename: './database/test.db3'},
   },
   production: {
     ...sharedConfig,
