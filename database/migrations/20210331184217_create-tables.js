@@ -13,8 +13,6 @@ exports.up = function (knex) {
       tbl.increments('post_id');
       tbl.string('post_title').notNullable();
       tbl.string('post_body').notNullable();
-      tbl.integer('post_upvotes');
-      tbl.integer('post_downvotes');
       tbl.string('post_clip_start').notNullable();
       tbl.string('post_clip_end').notNullable();
       tbl.datetime('post_created_on').defaultTo(knex.fn.now());
@@ -33,8 +31,6 @@ exports.up = function (knex) {
       tbl.increments('comment_id');
       tbl.string('comment_lineage');
       tbl.string('comment_body').notNullable();
-      tbl.integer('comment_upvotes');
-      tbl.integer('comment_downvotes');
       tbl.datetime('comment_created_on').defaultTo(knex.fn.now());
       tbl
         .integer('post_id')

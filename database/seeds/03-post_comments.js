@@ -7,8 +7,7 @@ exports.seed = function (knex) {
       return knex('post_comments').insert([
         {
           comment_lineage: '',
-          comment_body:
-            'comment_upvotes: 1. Badass post! You should come on my pod so we can chat!',
+          comment_body:'Badass post! You should come on my pod so we can chat!',
           comment_upvotes: 4,
           comment_downvotes: 3,
           user_id: 1,

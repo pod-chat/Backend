@@ -33,6 +33,13 @@ exports.seed = function (knex) {
           user_image: 'IMG_1912.jpg',
           user_password: '12345',
         },
+        {
+          user_display_name: 'Joe Schmoe',
+          user_email: 'joe@schmoe.com',
+          user_handle: '@joeSchmoe',
+          user_image: 'IMG_1912.jpg',
+          user_password: '12345',
+        },
       ]);
     });
 };
