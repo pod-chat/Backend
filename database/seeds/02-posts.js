@@ -8,8 +8,6 @@ exports.seed = function (knex) {
         {
           post_title: 'Elon musk dominates the world',
           post_body: 'lorem ipsum',
-          post_upvotes: 10,
-          post_downvotes: 5,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '1',
@@ -18,8 +16,6 @@ exports.seed = function (knex) {
         {
           post_title: 'asdfasdfsdfsafsaf',
           post_body: 'asdfasddfdsafsdfs',
-          post_upvotes: 20,
-          post_downvotes: 4,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '2',
@@ -28,8 +24,6 @@ exports.seed = function (knex) {
         {
           post_title: 'testtesttest',
           post_body: 'lorem ipsum',
-          post_upvotes: 50,
-          post_downvotes: 34,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '3',
@@ -38,8 +32,6 @@ exports.seed = function (knex) {
         {
           post_title: 'Elon musk dominates the world',
           post_body: 'lorem ipsum',
-          post_upvotes: 10,
-          post_downvotes: 5,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '1',
@@ -48,8 +40,6 @@ exports.seed = function (knex) {
         {
           post_title: 'asdfasdfsdfsafsaf',
           post_body: 'asdfasddfdsafsdfs',
-          post_upvotes: 20,
-          post_downvotes: 4,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '2',
@@ -58,8 +48,6 @@ exports.seed = function (knex) {
         {
           post_title: 'testtesttest',
           post_body: 'lorem ipsum',
-          post_upvotes: 50,
-          post_downvotes: 34,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '3',
@@ -68,8 +56,6 @@ exports.seed = function (knex) {
         {
           post_title: 'Elon musk dominates the world',
           post_body: 'lorem ipsum',
-          post_upvotes: 10,
-          post_downvotes: 5,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '1',
@@ -78,8 +64,6 @@ exports.seed = function (knex) {
         {
           post_title: 'asdfasdfsdfsafsaf',
           post_body: 'asdfasddfdsafsdfs',
-          post_upvotes: 20,
-          post_downvotes: 4,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '2',
@@ -88,8 +72,6 @@ exports.seed = function (knex) {
         {
           post_title: 'testtesttest',
           post_body: 'lorem ipsum',
-          post_upvotes: 50,
-          post_downvotes: 34,
           post_clip_start: '600',
           post_clip_end: '620',
           podcast_episode_id: '3',
