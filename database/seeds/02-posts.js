@@ -10,7 +10,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '1',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 1,
         },
         {
@@ -18,7 +18,7 @@ exports.seed = function (knex) {
           post_body: 'asdfasddfdsafsdfs',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '2',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 1,
         },
         {
@@ -26,7 +26,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '3',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 1,
         },
         {
@@ -34,7 +34,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '1',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 2,
         },
         {
@@ -42,7 +42,7 @@ exports.seed = function (knex) {
           post_body: 'asdfasddfdsafsdfs',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '2',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 2,
         },
         {
@@ -50,7 +50,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '3',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 2,
         },
         {
@@ -58,7 +58,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '1',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 3,
         },
         {
@@ -66,7 +66,7 @@ exports.seed = function (knex) {
           post_body: 'asdfasddfdsafsdfs',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '2',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 3,
         },
         {
@@ -74,7 +74,7 @@ exports.seed = function (knex) {
           post_body: 'lorem ipsum',
           post_clip_start: '600',
           post_clip_end: '620',
-          podcast_episode_id: '3',
+          podcast_episode_id: 'd0becd4e21bc4349b21078236427b6d7',
           user_id: 3,
         },
       ]);
