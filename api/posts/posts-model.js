@@ -3,7 +3,7 @@ const db = require('../../database/dbConfig');
 
 async function getAllPosts() {
   return await db('posts as p')
-    .join("post_votes as pv", "p.post_id", "pv.post_id")
+    .leftJoin("post_votes as pv", "p.post_id", "pv.post_id")
     .join("users as u", "u.user_id", "p.user_id")
     .groupBy("p.post_id", "u.user_id")
     .select(
@@ -13,7 +13,7 @@ async function getAllPosts() {
       "u.user_image", 
       db.raw(
         `jsonb_agg(pv.user_id) filter (where pv.vote = 1) as "upvotes",
-        jsonb_agg(pv.user_id) filter (where pv.vote =2 ) as "downvotes"`)
+        jsonb_agg(pv.user_id) filter (where pv.vote = 2 ) as "downvotes"`)
     )
 }
 
